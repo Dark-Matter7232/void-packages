@@ -224,6 +224,9 @@ $(print_cross_targets)
 
 -V  Print version of xbps, then exit.
 
+-x  <compiler>
+    Set compiler to use for building.
+
 _EOF
 }
 
@@ -354,7 +357,7 @@ readonly XBPS_SRC_VERSION="113"
 export XBPS_MACHINE=$(xbps-uhelper -C /dev/null arch)
 
 XBPS_OPTIONS=
-XBPS_OPTSTRING="1a:c:CEfgGhH:iIj:Lm:No:p:qQKr:tV"
+XBPS_OPTSTRING="1a:c:CEfgGhH:iIj:x:Lm:No:p:qQr:tV"
 
 # Preprocess arguments in order to allow options before and after XBPS_TARGET.
 eval set -- $(getopt "$XBPS_OPTSTRING" "$@");
@@ -388,6 +391,7 @@ while getopts "$XBPS_OPTSTRING" opt; do
         r) XBPS_ARG_ALT_REPOSITORY="$OPTARG"; XBPS_OPTIONS+=" -r $OPTARG";;
         t) XBPS_ARG_TEMP_MASTERDIR=1; XBPS_OPTIONS+=" -t -C";;
         V) echo "xbps-src-$XBPS_SRC_VERSION $(xbps-uhelper -V)" && exit 0;;
+        x) XBPS_ARG_COMPILER="$OPTARG"; XBPS_OPTIONS+=" -x $OPTARG";;
         --) shift; break;;
     esac
 done
@@ -471,12 +475,13 @@ fi
 [ -n "$XBPS_ARG_CROSS_BUILD" ] && XBPS_CROSS_BUILD="$XBPS_ARG_CROSS_BUILD"
 [ -n "$XBPS_ARG_CHECK_PKGS" ] && XBPS_CHECK_PKGS="$XBPS_ARG_CHECK_PKGS"
 [ -n "$XBPS_ARG_MAKEJOBS" ] && XBPS_MAKEJOBS="$XBPS_ARG_MAKEJOBS"
+[ -n "$XBPS_ARG_COMPILER" ] && XBPS_COMPILER="$XBPS_ARG_COMPILER"
 
 export XBPS_BUILD_ONLY_ONE_PKG XBPS_SKIP_REMOTEREPOS XBPS_BUILD_FORCEMODE \
        XBPS_INFORMATIVE_RUN XBPS_TEMP_MASTERDIR XBPS_BINPKG_EXISTS \
        XBPS_USE_GIT_REVS XBPS_CHECK_PKGS XBPS_DEBUG_PKGS XBPS_SKIP_DEPS \
        XBPS_KEEP_ALL XBPS_QUIET XBPS_ALT_REPOSITORY XBPS_CROSS_BUILD \
-       XBPS_MAKEJOBS XBPS_PRINT_VARIABLES
+       XBPS_MAKEJOBS XBPS_PRINT_VARIABLES XBPS_COMPILER
 
 # The masterdir/hostdir variables are forced and readonly in chroot
 if [ -z "$IN_CHROOT" ]; then
@@ -634,8 +639,9 @@ export XBPS_SHUTILSDIR XBPS_CROSSPFDIR XBPS_TRIGGERSDIR \
     XBPS_KEEP_ALL XBPS_HOSTDIR XBPS_MASTERDIR XBPS_SRC_VERSION \
     XBPS_DESTDIR XBPS_MACHINE XBPS_TEMP_MASTERDIR XBPS_BINPKG_EXISTS \
     XBPS_LIBEXECDIR XBPS_DISTDIR XBPS_DISTFILES_MIRROR XBPS_ALLOW_RESTRICTED \
-    XBPS_USE_GIT_COMMIT_DATE XBPS_PKG_COMPTYPE XBPS_REPO_COMPTYPE \
-    XBPS_BUILDHELPERDIR XBPS_USE_BUILD_MTIME XBPS_BUILD_ENVIRONMENT
+    XBPS_USE_GIT_COMMIT_DATE XBPS_PKG_COMPTYPE XBPS_REPO_COMPTYPE XBPS_BUILDHELPERDIR \
+    XBPS_COMPILER XBPS_CC XBPS_CXX XBPS_LD XBPS_AR XBPS_NM XBPS_STRIP XBPS_OBJCOPY XBPS_AS \
+    XBPS_OBJDUMP XBPS_READELF XBPS_CPP XBPS_RANLIB
 
 for i in REPOSITORY DESTDIR BUILDDIR SRCDISTDIR; do
     eval val="\$XBPS_$i"
@@ -670,6 +676,73 @@ if [ "$XBPS_CCACHE" ]; then
     export CCACHE_COMPILERCHECK=content CCACHE_COMPRESS=1
     export PATH="$CCACHEPATH:$PATH"
     mkdir -p $CCACHE_DIR
+fi
+
+#
+# Default Compiler options
+#
+[ ! "$XBPS_CC" ] && XBPS_CC="gcc"
+[ ! "$XBPS_CXX" ] && XBPS_CXX="g++"
+[ ! "$XBPS_CPP" ] && XBPS_CPP="cpp"
+[ ! "$XBPS_AR" ] && XBPS_AR="ar"
+[ ! "$XBPS_AS" ] && XBPS_AS="as"
+[ ! "$XBPS_NM" ] && XBPS_NM="nm"
+[ ! "$XBPS_LD" ] && XBPS_LD="ld"
+[ ! "$XBPS_STRIP" ] && XBPS_STRIP="strip"
+[ ! "$XBPS_OBJCOPY" ] && XBPS_OBJCOPY="objcopy"
+[ ! "$XBPS_OBJDUMP" ] && XBPS_OBJDUMP="objdump"
+[ ! "$XBPS_RANLIB" ] && XBPS_RANLIB="ranlib"
+[ ! "$XBPS_READELF" ] && XBPS_READELF="readelf"
+
+# Set Compiler
+case "$XBPS_COMPILER" in
+    "clang")
+        XBPS_CC="clang"
+        XBPS_CXX="clang++" 
+        XBPS_CPP="clang-cpp"
+        XBPS_AR="llvm-ar" 
+        XBPS_AS="llvm-as"
+        XBPS_NM="llvm-nm" 
+        XBPS_LD="ld.lld"
+        XBPS_RANLIB="llvm-ranlib"
+        XBPS_STRIP="llvm-strip"
+        XBPS_OBJCOPY="llvm-objcopy"
+        XBPS_OBJDUMP="llvm-objdump"
+        XBPS_RANLIB="llvm-ranlib"
+        XBPS_READELF="llvm-readelf"
+    ;;
+    *)
+	[ ! "$XBPS_CC" ] && XBPS_CC="$XBPS_CC"
+	[ ! "$XBPS_CXX" ] && XBPS_CXX="$XBPS_CXX"
+	[ ! "$XBPS_CPP" ] && XBPS_CPP="$XBPS_CPP"
+	[ ! "$XBPS_AR" ] && XBPS_AR="$XBPS_AR"
+	[ ! "$XBPS_AS" ] && XBPS_AS="$XBPS_AS"
+	[ ! "$XBPS_NM" ] && XBPS_NM="$XBPS_NM"
+	[ ! "$XBPS_LD" ] && XBPS_LD="$XBPS_LD"
+	[ ! "$XBPS_STRIP" ] && XBPS_STRIP="$XBPS_STRIP"
+	[ ! "$XBPS_OBJCOPY" ] && XBPS_OBJCOPY="$XBPS_OBJCOPY"
+    [ ! "$XBPS_OBJDUMP" ] && XBPS_OBJDUMP="$XBPS_OBJDUMP"
+    [ ! "$XBPS_RANLIB" ] && XBPS_RANLIB="$XBPS_RANLIB"
+    [ ! "$XBPS_READELF" ] && XBPS_READELF="$XBPS_READELF"
+esac
+
+#
+# If XBPS_COMPILER not defined, but XBPS compiler options are
+# use those options
+# 
+if [ ! "$XBPS_COMPILER" ]; then
+	[ ! "$XBPS_CC" ] && XBPS_CC="$XBPS_CC"
+	[ ! "$XBPS_CXX" ] && XBPS_CXX="$XBPS_CXX"
+	[ ! "$XBPS_CPP" ] && XBPS_CPP="$XBPS_CPP"
+	[ ! "$XBPS_AR" ] && XBPS_AR="$XBPS_AR"
+	[ ! "$XBPS_AS" ] && XBPS_AS="$XBPS_AS"
+	[ ! "$XBPS_NM" ] && XBPS_NM="$XBPS_NM"
+	[ ! "$XBPS_LD" ] && XBPS_LD="$XBPS_LD"
+	[ ! "$XBPS_STRIP" ] && XBPS_STRIP="$XBPS_STRIP"
+	[ ! "$XBPS_OBJCOPY" ] && XBPS_OBJCOPY="$XBPS_OBJCOPY"
+    [ ! "$XBPS_OBJDUMP" ] && XBPS_OBJDUMP="$XBPS_OBJDUMP"
+    [ ! "$XBPS_RANLIB" ] && XBPS_RANLIB="$XBPS_RANLIB"
+    [ ! "$XBPS_READELF" ] && XBPS_READELF="$XBPS_READELF"
 fi
 
 #
