@@ -31,7 +31,7 @@ fi
 
 if [ ! -e ${srcdir}/linux-tkg ]; then
 	cd ${srcdir}
-	git clone https://github.com/Frogging-Family/linux-tkg.git
+	git clone https://github.com/Dark-Matter7232/linux-tkg.git
 fi
 
 source ${_files}/customization.cfg
