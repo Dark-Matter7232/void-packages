@@ -1,6 +1,6 @@
 # Template file for 'sakura'
 pkgname=sakura
-version=3.8.0
+version=3.8.2
 revision=1
 build_style=cmake
 hostmakedepends="perl pkg-config gettext"
@@ -11,5 +11,5 @@ maintainer="travankor <travankor@tuta.io>"
 license="GPL-2.0-only"
 homepage="https://launchpad.net/sakura"
 distfiles="https://launchpad.net/sakura/trunk/${version}/+download/sakura-${version}.tar.bz2"
-checksum=0c414b368cb8f4263d3a899cd2b96e8caf839d916f3ee806e9f50d098fc2fa0f
+checksum=9ddfe8919ae0e11673ca22879ae324565d0987b14e948e1d2badff538fe1b5b9
 patch_args="-Np1"

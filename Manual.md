@@ -176,9 +176,8 @@ can be used to perform other operations before configuring the package.
 - `check` This optional phase checks the result of the `build` phase by running the testsuite provided by the package.
 If the default `do_check` function provided by the build style doesn't do anything, the template should set
 `make_check_target` and/or `make_check_args` appropriately or define its own `do_check` function. If tests take too long
-or can't run in all environments, they should be run only if `XBPS_CHECK_PKGS` is `full`, which means they should either
-be under a `[ "$XBPS_CHECK_PKGS" = full ]` conditional (especially useful with custom `do_check`) or `make_check=extended`
-should be set in the template.
+or can't run in all environments, `make_check` should be set to fitting value or
+`do_check` should be customized to limit testsuite unless `XBPS_CHECK_PKGS` is `full`.
 
 - `install` This phase installs the `package files` into the package destdir `<masterdir>/destdir/<pkgname>-<version>`,
 via `make install` or any other compatible method.
@@ -606,10 +605,15 @@ patches to the package sources during `do_patch()`. Patches are stored in
 - `disable_parallel_build` If set the package won't be built in parallel
 and `XBPS_MAKEJOBS` has no effect.
 
-- `make_check` Sets the cases in which the `check` phase is run. Can be `yes` (the default) to run if
-`XBPS_CHECK_PKGS` is set, `extended` to run if `XBPS_CHECK_PKGS` is `full` and `no` to never run.
+- `make_check` Sets the cases in which the `check` phase is run.
 This option should usually be accompanied by a comment explaining why it was set, especially when
 set to `no`.
+Allowed values:
+  - `yes` (the default) to run if `XBPS_CHECK_PKGS` is set.
+  - `extended` to run if `XBPS_CHECK_PKGS` is `full`.
+  - `ci-skip` to run locally if `XBPS_CHECK_PKGS` is set, but not as part of pull request checks.
+  - `no` to never run.
+
 
 - `keep_libtool_archives` If enabled the `GNU Libtool` archives won't be removed. By default those
 files are always removed automatically.
@@ -1527,7 +1531,8 @@ This sets some environment variables required to allow cross compilation. Suppor
 building a python module for multiple versions from a single template is also possible.
 The `python3-pep517` build style provides means to build python packages that provide a build-system
 definition compliant with [PEP 517](https://www.python.org/dev/peps/pep-0517/) without a traditional
-`setup.py` script.
+`setup.py` script. The `python3-pep517` build style does not provide a specific build backend, so
+packages will need to add an appropriate backend provider to `hostmakedepends`.
 
 Python packages that rely on `python3-setuptools` should generally map `setup_requires`
 dependencies in `setup.py` to `hostmakedepends` in the template and `install_requires`
@@ -2093,4 +2098,4 @@ to pull in new changes:
 ## Help
 
 If after reading this `manual` you still need some kind of help, please join
-us at `#xbps` via IRC at `irc.freenode.net`.
+us at `#xbps` via IRC at `irc.libera.chat`.
