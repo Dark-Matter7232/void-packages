@@ -129,26 +129,6 @@ case $_basever in
                 0011-ZFS-fix.patch
                 0012-linux-hardened.patch
         )
-        sha256sums=('be2066dd6133357007e8c7da9d5de3194b13409ebbfba8821db1849588fced1e'
-            '1f4a20d6eaaa0d969af93152a65191492400c6aa838fc1c290b0dd29bb6019d8'
-            '1e15fc2ef3fa770217ecc63a220e5df2ddbcf3295eb4a021171e7edd4c6cc898'
-            '66a03c246037451a77b4d448565b1d7e9368270c7d02872fbd0b5d024ed0a997'
-            '31dc68e84aecfb7d069efb1305049122c65694676be8b955634abcf0675922a2'
-            'd02bf5ca08fd610394b9d3a0c3b176d74af206f897dee826e5cbaec97bb4a4aa'
-            '3ef74dd80dc8c4323803cbf868178cf01d8ed69f09fe2f537ff91124cbd6e611'
-            '7058e57fd68367b029adc77f2a82928f1433daaf02c8c279cb2d13556c8804d7'
-            'c605f638d74c61861ebdc36ebd4cb8b6475eae2f6273e1ccb2bbb3e10a2ec3fe'
-            'bc69d6e5ee8172b0242c8fa72d13cfe2b8d2b6601468836908a7dfe8b78a3bbb'
-            '815974c65f47301d2a5d1577bf95e8a4b54cad7d77f226e0065f83e763837c48'
-            '62496f9ca788996181ef145f96ad26291282fcc3fb95cdc04080dcf84365be33'
-            'eac7e5d6201528e64f4bdf5e286c842511e1afc52e1518dc8e7d11932bbe0a99'
-            'db03fbd179ec78941eefe1c0edde4c19071bc603511d0b5c06c04e412994b62e'
-            '19661ec0d39f9663452b34433214c755179894528bf73a42f6ba52ccf572832a'
-            '2d9260b80b43bbd605cf420d6bd53aa7262103dfd77196ba590ece5600b6dc0d'
-            '3832f828a9f402b153fc9a6829c5a4eaf6091804bcda3a0423c8e1b57e26420d'
-            '6a6a736cf1b3513d108bfd36f60baf50bb36b33aec21ab0d0ffad13602b7ff75'
-            '49262ce4a8089fa70275aad742fc914baa28d9c384f710c9a62f64796d13e104'
-            'aeb31404c26ee898d007b1f66cb9572c9884ad8eca14edc4587d68f6cba6de46')
         ;;
         57)
         opt_ver="5.7+"
@@ -180,28 +160,6 @@ case $_basever in
                 0012-linux-hardened.patch
                 #0012-misc-additions.patch
         )
-        sha256sums=('6313ccad7f8e4d8ce09dd5bdb51b8dfa124d0034d7097ba47008380a14a84f09'
-            '15ce09447b7e9b28425c1df5961c955378f2829e4115037337eef347b1db3d9d'
-            '1e15fc2ef3fa770217ecc63a220e5df2ddbcf3295eb4a021171e7edd4c6cc898'
-            '66a03c246037451a77b4d448565b1d7e9368270c7d02872fbd0b5d024ed0a997'
-            '31dc68e84aecfb7d069efb1305049122c65694676be8b955634abcf0675922a2'
-            'd02bf5ca08fd610394b9d3a0c3b176d74af206f897dee826e5cbaec97bb4a4aa'
-            'bbf332201423888257c9687bee06916a5dbbac2194f9df5b4126100c40e48d16'
-            '7058e57fd68367b029adc77f2a82928f1433daaf02c8c279cb2d13556c8804d7'
-            'c605f638d74c61861ebdc36ebd4cb8b6475eae2f6273e1ccb2bbb3e10a2ec3fe'
-            'bc69d6e5ee8172b0242c8fa72d13cfe2b8d2b6601468836908a7dfe8b78a3bbb'
-            '8d8aec86e34dbec6cc3a47f2cd55dc9212e95d36b6cd34d6e637c66731e7d838'
-            '62496f9ca788996181ef145f96ad26291282fcc3fb95cdc04080dcf84365be33'
-            '7fd8e776209dac98627453fda754bdf9aff4a09f27cb0b3766d7983612eb3c74'
-            '55be5e4c6254da0a9d34bbfac807a70d8b58b3f7b2ec852026195c4db5e263e2'
-            '19661ec0d39f9663452b34433214c755179894528bf73a42f6ba52ccf572832a'
-            'cd225e86d72eaf6c31ef3d7b20df397f4cc44ddd04389850691292cdf292b204'
-            'd2214504c43f9d297a8ef68dffc198143bfebf85614b71637a71978d7a86bd78'
-            '9fad4a40449e09522899955762c8928ae17f4cdaa16e01239fd12592e9d58177'
-            '965a517a283f265a012545fbb5cc9e516efc9f6166d2aa1baf7293a32a1086b7'
-            'b2a2ae866fc3f1093f67e69ba59738827e336b8f800fb0487599127f7f3ef881'
-            '49262ce4a8089fa70275aad742fc914baa28d9c384f710c9a62f64796d13e104'
-            '6821f92bd2bde3a3938d17b070d70f18a2f33cae81647567b5a4d94c9cd75f3d')
         ;;
         58)
         opt_ver="5.8+"
@@ -234,25 +192,6 @@ case $_basever in
                 #0012-linux-hardened.patch
                 0012-misc-additions.patch
         )
-        sha256sums=('ac66686b0e1ed057ea5f099cd00366decc00f999aa1cb19ba8d3ccf9f92d60e2'
-            '1e15fc2ef3fa770217ecc63a220e5df2ddbcf3295eb4a021171e7edd4c6cc898'
-            '66a03c246037451a77b4d448565b1d7e9368270c7d02872fbd0b5d024ed0a997'
-            'f6383abef027fd9a430fd33415355e0df492cdc3c90e9938bf2d98f4f63b32e6'
-            '35a7cde86fb94939c0f25a62b8c47f3de0dbd3c65f876f460b263181b3e92fc0'
-            'b9ebe0ae69bc2b2091d6bfcf6c7875a87ea7969fcfa4e306c48d47a60f9ef4d6'
-            '7058e57fd68367b029adc77f2a82928f1433daaf02c8c279cb2d13556c8804d7'
-            '62496f9ca788996181ef145f96ad26291282fcc3fb95cdc04080dcf84365be33'
-            '7fd8e776209dac98627453fda754bdf9aff4a09f27cb0b3766d7983612eb3c74'
-            '31b172eb6a0c635a8d64cc1c2e8181d9f928ee991bd44f6e556d1713b815f8d9'
-            '87bca363416655bc865fcb2cc0d1532cb010a61d9b9f625e3c15cd12eeee3a59'
-            '19661ec0d39f9663452b34433214c755179894528bf73a42f6ba52ccf572832a'
-            'cd225e86d72eaf6c31ef3d7b20df397f4cc44ddd04389850691292cdf292b204'
-            'e73c3a8a040a35eb48d1e0ce4f66dd6e6f69fd10ee5b1acf3a0334cbf7ffb0c4'
-            '9fad4a40449e09522899955762c8928ae17f4cdaa16e01239fd12592e9d58177'
-            '965a517a283f265a012545fbb5cc9e516efc9f6166d2aa1baf7293a32a1086b7'
-            'f5dbff4833a2e3ca94c202e5197894d5f1006c689ff149355353e77d2e17c943'
-            '49262ce4a8089fa70275aad742fc914baa28d9c384f710c9a62f64796d13e104'
-            '98311deeb474b39e821cd1e64198793d5c4d797155b3b8bbcb1938b7f11e8d74')
 
         ;;
         59)
@@ -286,28 +225,6 @@ case $_basever in
                 #0012-linux-hardened.patch
                 0012-misc-additions.patch
         )
-        sha256sums=('958333f18de79c19ccf9eccb4e16e2a217a0619a1d96c2c65ccba23628815bab'
-            '1e15fc2ef3fa770217ecc63a220e5df2ddbcf3295eb4a021171e7edd4c6cc898'
-            '66a03c246037451a77b4d448565b1d7e9368270c7d02872fbd0b5d024ed0a997'
-            'f6383abef027fd9a430fd33415355e0df492cdc3c90e9938bf2d98f4f63b32e6'
-            '35a7cde86fb94939c0f25a62b8c47f3de0dbd3c65f876f460b263181b3e92fc0'
-            '902885088ed0748e40372e04a8ec11adf5acf3d935abffc6737dd9e6ec13bb93'
-            '7058e57fd68367b029adc77f2a82928f1433daaf02c8c279cb2d13556c8804d7'
-            'c605f638d74c61861ebdc36ebd4cb8b6475eae2f6273e1ccb2bbb3e10a2ec3fe'
-            '2bbbac963b6ca44ef3f8a71ec7c5cad7d66df860869a73059087ee236775970a'
-            '45a9ab99215ab3313be6e66e073d29154aac55bc58975a4df2dad116c918d27c'
-            '62496f9ca788996181ef145f96ad26291282fcc3fb95cdc04080dcf84365be33'
-            '31b428c464905e44ed61cdcd1f42b4ec157ebe5a44cb5b608c4c99b466df66ba'
-            'f9f5f0a3a1d6c5233b9d7a4afe8ed99be97c4ff00a80bde4017d117c7d5f98ed'
-            'fca63d15ca4502aebd73e76d7499b243d2c03db71ff5ab0bf5cf268b2e576320'
-            '19661ec0d39f9663452b34433214c755179894528bf73a42f6ba52ccf572832a'
-            'b302ba6c5bbe8ed19b20207505d513208fae1e678cf4d8e7ac0b154e5fe3f456'
-            '14a261f1940a2b21b6b14df7391fc2c6274694bcfabfac3d0e985a67285dbfe7'
-            '9fad4a40449e09522899955762c8928ae17f4cdaa16e01239fd12592e9d58177'
-            'a557b342111849a5f920bbe1c129f3ff1fc1eff62c6bd6685e0972fc88e39911'
-            '0d5fe3a9050536fe431564b221badb85af7ff57b330e3978ae90d21989fcad2d'
-            '49262ce4a8089fa70275aad742fc914baa28d9c384f710c9a62f64796d13e104'
-            '433b919e6a0be26784fb4304c43b1811a28f12ad3de9e26c0af827f64c0c316e')
 
         ;;
         510)
@@ -341,27 +258,6 @@ case $_basever in
                 #0012-linux-hardened.patch
                 0012-misc-additions.patch
         )
-        sha256sums=('4720ffe4c063ec948918cadf7498e96be8a035717e587b4c949d3c2a4471d5d9'
-            '1e15fc2ef3fa770217ecc63a220e5df2ddbcf3295eb4a021171e7edd4c6cc898'
-            '66a03c246037451a77b4d448565b1d7e9368270c7d02872fbd0b5d024ed0a997'
-            'f6383abef027fd9a430fd33415355e0df492cdc3c90e9938bf2d98f4f63b32e6'
-            '35a7cde86fb94939c0f25a62b8c47f3de0dbd3c65f876f460b263181b3e92fc0'
-            '1ac97da07e72ec7e2b0923d32daacacfaa632a44c714d6942d9f143fe239e1b5'
-            '7058e57fd68367b029adc77f2a82928f1433daaf02c8c279cb2d13556c8804d7'
-            'c605f638d74c61861ebdc36ebd4cb8b6475eae2f6273e1ccb2bbb3e10a2ec3fe'
-            '2bbbac963b6ca44ef3f8a71ec7c5cad7d66df860869a73059087ee236775970a'
-            'e00096244e5cddaa5500d08b5f692fd3f25be9401dfa3b0fc624625ff2f5e198'
-            '62496f9ca788996181ef145f96ad26291282fcc3fb95cdc04080dcf84365be33'
-            '31b428c464905e44ed61cdcd1f42b4ec157ebe5a44cb5b608c4c99b466df66ba'
-            '06e93b57b7a0b96aefc2c0ec12c3be28c6e8dc8506fa8a22c5a2313814a3c7f3'
-            'fca63d15ca4502aebd73e76d7499b243d2c03db71ff5ab0bf5cf268b2e576320'
-            '19661ec0d39f9663452b34433214c755179894528bf73a42f6ba52ccf572832a'
-            'b302ba6c5bbe8ed19b20207505d513208fae1e678cf4d8e7ac0b154e5fe3f456'
-            '9fad4a40449e09522899955762c8928ae17f4cdaa16e01239fd12592e9d58177'
-            'a557b342111849a5f920bbe1c129f3ff1fc1eff62c6bd6685e0972fc88e39911'
-            'e308292fc42840a2366280ea7cf26314e92b931bb11f04ad4830276fc0326ee1'
-            '49262ce4a8089fa70275aad742fc914baa28d9c384f710c9a62f64796d13e104'
-            '7fb1104c167edb79ec8fbdcde97940ed0f806aa978bdd14d0c665a1d76d25c24')
        ;;
         511)
         opt_ver="5.8+"
@@ -389,22 +285,11 @@ case $_basever in
                 #0008-5.10-bcachefs.patch
                 #0009-glitched-ondemand-bmq.patch
                 #0009-glitched-bmq.patch
-                #0009-prjc_v5.10-r0.patch
+                0009-prjc_v5.12-r1.patch
                 0011-ZFS-fix.patch
                 #0012-linux-hardened.patch
-                #0012-misc-additions.patch
+                0012-misc-additions.patch
         )
-        sha256sums=('4e4340b66ee899c3459c39e6481d4aaf3078f113fe50ccea4afb42ec9b53d58d'
-            '1e15fc2ef3fa770217ecc63a220e5df2ddbcf3295eb4a021171e7edd4c6cc898'
-            '66a03c246037451a77b4d448565b1d7e9368270c7d02872fbd0b5d024ed0a997'
-            'f6383abef027fd9a430fd33415355e0df492cdc3c90e9938bf2d98f4f63b32e6'
-            '35a7cde86fb94939c0f25a62b8c47f3de0dbd3c65f876f460b263181b3e92fc0'
-            '1ac97da07e72ec7e2b0923d32daacacfaa632a44c714d6942d9f143fe239e1b5'
-            '7058e57fd68367b029adc77f2a82928f1433daaf02c8c279cb2d13556c8804d7'
-            '19661ec0d39f9663452b34433214c755179894528bf73a42f6ba52ccf572832a'
-	    'b302ba6c5bbe8ed19b20207505d513208fae1e678cf4d8e7ac0b154e5fe3f456'
-            '49262ce4a8089fa70275aad742fc914baa28d9c384f710c9a62f64796d13e104'
-            '433b919e6a0be26784fb4304c43b1811a28f12ad3de9e26c0af827f64c0c316e')
        ;;
         512)
         opt_ver="5.8+"
@@ -420,58 +305,29 @@ case $_basever in
                 0002-clear-patches.patch
                 0003-glitched-base.patch
                 0003-glitched-cfs.patch
-                #0004-glitched-ondemand-muqss.patch
-                #0004-glitched-muqss.patch
-                #0004-5.11-ck1.patch
+                0004-glitched-ondemand-muqss.patch
+                0004-glitched-muqss.patch
+                0004-5.12-ck1.patch
                 #0005-undead-glitched-ondemand-pds.patch
                 #0005-undead-glitched-pds.patch
-                #0005-v5.11_undead-pds099o.patch
-                #0005-glitched-pds.patch
+                #0005-v5.12_undead-pds099o.patch
+                0005-glitched-pds.patch
                 0006-add-acs-overrides_iommu.patch
                 0007-v5.12-fsync.patch
-                #0008-5.10-bcachefs.patch
-                #0009-glitched-ondemand-bmq.patch
-                #0009-glitched-bmq.patch
-                #0009-prjc_v5.10-r0.patch
-                #0011-ZFS-fix.patch
+                0007-v5.12-futex2_interface.patch
+                0007-v5.12-winesync.patch
+                #0008-5.12-bcachefs.patch
+                0009-glitched-ondemand-bmq.patch
+                0009-glitched-bmq.patch
+                0009-prjc_v5.12-r1.patch
                 #0012-linux-hardened.patch
-                #0012-misc-additions.patch
+                0012-misc-additions.patch
+                # MM Dirty Soft for WRITE_WATCH support in Wine
+                0001-mm-Support-soft-dirty-flag-reset-for-VA-range.patch
+                0002-mm-Support-soft-dirty-flag-read-with-reset.patch
         )
-        sha256sums=('84e8ad516fad66514ea6b430345b261118f571c93b0c7358d1bc3291ced11c82'
-            '1e15fc2ef3fa770217ecc63a220e5df2ddbcf3295eb4a021171e7edd4c6cc898'
-            '66a03c246037451a77b4d448565b1d7e9368270c7d02872fbd0b5d024ed0a997'
-            'f6383abef027fd9a430fd33415355e0df492cdc3c90e9938bf2d98f4f63b32e6'
-            '35a7cde86fb94939c0f25a62b8c47f3de0dbd3c65f876f460b263181b3e92fc0'
-            '1ac97da07e72ec7e2b0923d32daacacfaa632a44c714d6942d9f143fe239e1b5'
-            '7058e57fd68367b029adc77f2a82928f1433daaf02c8c279cb2d13556c8804d7'
-            '19661ec0d39f9663452b34433214c755179894528bf73a42f6ba52ccf572832a'
-	    'b302ba6c5bbe8ed19b20207505d513208fae1e678cf4d8e7ac0b154e5fe3f456'
-            '49262ce4a8089fa70275aad742fc914baa28d9c384f710c9a62f64796d13e104'
-            '433b919e6a0be26784fb4304c43b1811a28f12ad3de9e26c0af827f64c0c316e')
        ;;
 esac
-
-# sums check
-if [ ! -e ${srcdir}/sum_check ]; then
-	cd ${srcdir}
-	for i in ${source[@]}; do
-		sums+=($(sha256sum $i | cut -d' ' -f1))
-	done
-
-	for i in ${!sums[@]}; do
-		if [ "${sums[$i]}" != "${sha256sums[$i]}" ] && [ ! -e ${srcdir}/sum_failed ] ;then
-			error "sha256sum mismatch! ${source[$i]}"
-			touch ${srcdir}/sum_failed
-			exit 1
-		elif [ ! -e ${srcdir}/sum_failed ]; then
-			msg2 "Checking ${source[$i]} sum... OK"
-		else
-			error "Sum check failed! Will exit before build!"
-			break
-		fi
-	done
-	touch ${srcdir}/sum_check
-fi
 
 distfiles="${kernel_site}
 https://raw.githubusercontent.com/graysky2/kernel_gcc_patch/master/more-uarches-for-kernel-${opt_ver}.patch"
