@@ -294,7 +294,7 @@ case $_basever in
         512)
         opt_ver="5.8+"
 	cpu_opt_sum='9083b94bf9f547cceeed9fe2f37fb201e42d5b00734a86e4ea528447a59d4b9a'
-	kernel_sum='5acdd08104a3e1c332ef708a6b0c39f579d5e930ff4ab0e2e90bfcb886f39e31'
+	kernel_sum='d64c6762d94cfde894a507f8862cb5bcdfe2dbe9b17236e83c27126e7a7aeb56'
         source=("config.x86_64" # stock Arch config
                 #$hardened_config_file # hardened Arch config
                 90-cleanup.hook
