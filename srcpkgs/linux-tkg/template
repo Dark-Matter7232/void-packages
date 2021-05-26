@@ -61,7 +61,7 @@ source ${srcdir}/compilerset
 source ${srcdir}/versel
 source ${srcdir}/path
 # Template file for 'linux${_basever}-tkg-${_cpusched}${_compiler_name}'
-pkgname=linux${_basever}-tkg-${_cpusched}${_compiler_name}
+pkgname=linux-tkg
 pkgdesc="Linux-tkg"
 revision=20
 archs="x86_64" # PKGBUILD declares x86_64 only
